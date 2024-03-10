@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+   <h:outputStylesheet library="webjars" name="bootstrap/5.3.0/css/bootstrap.min.css" />
+</h:head>
+
+<h:body>
+   <f:view>
+      <div class="container" style="position:absolute;left: 70%;margin-top: 2%" >
+         <h:outputText style="font-size: 20px;margin-left: 100px;" value="Add New Client" rendered="false"/>
+         <h:form styleClass="needs-validation" novalidate="true" rendered="false">
+
+            <div class="row g-3">
+               <div class="col-md-6" style="width: 400px;">
+
+                  <div class="msger">
+                     <label for="firstName" class="form-label">#{msg.firstname}</label>
+                     <h:message errorStyle="color: orangered;float: right;" for="firstName" />
+                  </div>
+                  <h:inputText id="firstName" value="#{clientBean.client.firstname}" styleClass="form-control"  binding="#{clientBean.firstNameInput}" required="true" validator="custom.firstNameValidator"   requiredMessage="#{msg.firstnameerrror}"/>
+
+                  <div class="msger">
+                     <label for="lastName" class="form-label">#{msg.lastname}</label>
+                     <h:message errorStyle="color: orangered;float: right;" for="lastName" />
+                  </div>
+
+                  <h:inputText id="lastName" value="#{clientBean.client.lastname}" styleClass="form-control"  binding="#{clientBean.lastNameInput}" required="true" requiredMessage="#{msg.lastnameerrror}" validator="custom.lastNameValidator" />
+                  <div class="msger" >
+                     <label for="email" class="form-label">#{msg.email}</label>
+                     <h:message errorStyle="color: orangered;float: right;" for="email" />
+                  </div>
+                  <h:inputText id="email" value="#{clientBean.client.email}" styleClass="form-control"  binding="#{clientBean.emailInput}" required="true" validator="custom.emailValidator" requiredMessage="#{msg.emailerrror}" />
+
+                  <div class="msger" >
+                     <label for="phone" class="form-label">#{msg.phone}</label>
+
+                     <h:message errorStyle="color: orangered;float: right;" for="phone" />
+                  </div>
+                  <h:inputText id="phone" value="#{clientBean.client.phone}" styleClass="form-control"  binding="#{clientBean.phoneInput}" required="true" requiredMessage="#{msg.phoneerrror}" validator="custom.phoneNumberValidator" />
+
+
+
+                  <div class="msger">
+                     <label for="password" class="form-label">#{msg.password}</label>
+                     <h:message errorStyle="color: orangered;float: right;" for="password" />
+                  </div>
+                  <h:inputText id="password" value="#{clientBean.client.password}" styleClass="form-control" required="true" requiredMessage="#{msg.passworderrror}" validator="custom.passwordValidator" binding="#{clientBean.passwordInput}" />
+
+               </div>
+               <div class="col-md-12" >
+                  <h:commandButton value="#{msg.subbutton}"  styleClass="btn btn-primary"/>
+                  <h:commandButton value="#{msg.reteurbutton}" action="#{clientBean.annuler}"  styleClass="btn btn-primary" />
+                  <h:messages globalOnly="true" />
+               </div>
+            </div>
+         </h:form>
+      </div>
+   </f:view>
+
+   <h:outputScript library="webjars" name="bootstrap/5.3.0/js/bootstrap.bundle.min.js"/>
+</h:body>
+
+</html>

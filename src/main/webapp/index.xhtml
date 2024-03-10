@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bank Website</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<h:form>
+    <header sty>
+        <nav>
+            <div class="logo">
+
+                <h1>Bank Name</h1>
+            </div>
+            <ul class="menu">
+                <li><h:commandLink value="Home" action="#{navigationBean.goToHome}" /></li>
+                <li><h:commandLink value="Accounts" action="#{navigationBean.goToAccounts}" /></li>
+                <li><h:commandLink value="Transactions" action="#{navigationBean.goToTransactions}" /></li>
+                <li><h:commandLink value="Services" action="#{navigationBean.goToServices}" /></li>
+                <li><h:commandLink value="Contact" action="#{navigationBean.goToContact}" /></li>
+            </ul>
+        </nav>
+    </header>
+</h:form>
+<!-- Rest of the page content goes here -->
+</body>
+</html>
