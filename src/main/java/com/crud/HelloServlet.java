@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HelloServlet{
     @GetMapping("/")
     public String index() {
-        return "index";
+        return "ListClients.xhtml";
     }
 
     public static void main(String[] args) {
